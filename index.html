@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+        .container{
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 999;
+            color: #565656;
+            font-size: 15px;
+        }
+        .content{
+            width: 100%;
+            margin-top: 50px;
+
+
+        }
+        /*.pull-left{*/
+            /*float: left;*/
+        /*}*/
+        .title>ul{
+            float: left;
+        }
+        .title li{
+            /*width: 150px;*/
+            /*height: 40px;*/
+            border: 1px solid #cccccc;
+            text-align: center;
+            padding: 0 30px 0 60px;
+            line-height: 40px;
+            margin-left: 10px;
+            float: left;
+            /*background:#cccccc;*/
+            position: relative;
+            /*text-align: center;*/
+            font-size: 14px;
+            /*-webkit-box-sizing: sizei;*/
+            /*-moz-box-sizing: sizei;*/
+            box-sizing: border-box;
+            min-width: 122px;
+        }
+        .title li i{
+
+            width: 25px;
+            height: 24px;
+
+            background: url("player.png") no-repeat 0px -94px;
+            /*display: inline-block;*/
+            position: absolute;
+            left: 32px;
+            top: 8px;
+        }
+        a{
+            text-decoration: none;
+            /*out-line: nonecolor;*/
+
+            color: #888888;
+        }
+        .music{
+            /*margin-left: 90px;*/
+            width: 100%;
+        }
+        .music-top{
+            width: 100%;
+            margin-left: 90px;
+        }
+        .music-top p{
+            float: left;
+        }
+        .clear{
+            clear:both;
+        }
+        .music-cententer ul{
+            width: 95%;
+            height: 30px;
+            margin: -1px;
+            border: 1px solid rgba(224, 224, 224, 0);
+        }
+        .music-cententer li{
+            float: left;
+        }
+        .music-name{
+            width: 50%;
+        }
+        .music-singer{
+            width: 25%;
+        }
+        .music-time{
+            width: 25%;
+        }
+        .music-cententer{
+          margin-left: 90px;
+            width: 100%;
+            height: 500px;
+        }
+        .ms-left{
+            width: 180px;
+            height: 27px;
+            /*background: #cccccc;*/
+            float: left;
+        }
+        .ms-left>a{
+            width: 22px;
+            height: 24px;
+            /*background:#cccccc url("player.png") no-repeat 2px -28px ;*/
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .ms-left a:nth-of-type(1){
+            width: 21px;
+            height: 24px;
+            display: inline-block;
+            background: url("player.png") no-repeat 2px -28px ;
+        }
+        .ms-left :nth-of-type(2){
+            width: 24px;
+            height: 26px;
+            background:url("player.png") no-repeat 4px -2px ;
+        }
+        .ms-left :nth-of-type(3){
+            background:url("player.png") no-repeat 2px -50px ;
+        }
+        .ms-centene{
+            margin-left: 20px;
+            width: 50%;
+            float: left;
+        }
+        .ms-name{
+            float: left;
+        }
+        .ms-time{
+            float: right;
+        }
+        .w-progress{
+            width: 100%;
+            height: 2px;
+            background-color: rgba(225, 225, 225, .2);
+            position: relative;
+        }
+        .n-progress{
+            width: 0;
+            height: 2px;
+            background-color: rgba(225, 225, 225, .8);
+        }
+        .btn{
+            width: 10px;
+            height: 10px;
+            border-radius:50%;
+            background: #FFFFFF;
+            position: absolute;
+            top: -3px;
+            left: 0;
+        }
+        .content-left{
+            width: 70%;
+            float: left;
+        }
+        .content-right{
+            float: right;
+        }
+        .cr-top img{
+            width: 200px;
+            height: 180px;
+        }
+        .cr-bottom{
+            width: 400px;
+            height: 50px;
+            border: 1px solid #FFFFFF;
+        }
+        .grounp{
+            float: left;
+            width: 30%;
+            height: 50px;
+            /*border: 1px solid #FFFFFF;*/
+            margin-left: 10px;
+            position: relative;
+
+            /*overflow: hidden;*/
+        }
+        .grounp >i{
+            width: 27px;
+            height: 25px;
+            float: left;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .grounp i:nth-of-type(1){
+            font-size: 12px;
+            text-align: center;
+            line-height: 25px;
+            background: url("player.png") no-repeat 0px -230px;
+        }
+        .grounp i:nth-of-type(2){
+            background: url("player.png") no-repeat 0px -93px;
+        }
+        .grounp i:nth-of-type(3){
+            background: url("player.png") no-repeat 0px -117px;
+        }
+        .grounp i:nth-of-type(4){
+            background: url("player.png") no-repeat 0px -399px;
+        }
+        .grounp i:nth-of-type(5){
+            width: 75px;
+            height: 25px;
+            background: url("player.png") no-repeat 0px -283px;
+        }
+        .volum{
+            margin-left: 10px;
+            width: 40%;
+            height: 30px;
+            float: left;
+            /*background: url("player.png") no-repeat 0px -283px;*/
+        }
+        .volum i:nth-of-type(1){
+            float: left;
+            width: 25px;
+            height: 24px;
+            display: inline-block;
+            background: url("player.png") no-repeat 0px -143px;
+        }
+        .vn-big{
+            width: 100px;
+            height: 20px;
+
+        }
+        .vw-progress{
+           margin-top: 12px;
+            margin-left: 10px;
+            float: left;
+            width: 60%;
+            height: 2px;
+            background-color: rgba(225, 225, 225, .2);
+            position: relative;
+        }
+        .vn-progress{
+            width: 100%;
+            height: 2px;
+            background-color: rgba(225, 225, 225, .8);
+        }
+        .vm-btn{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            background: #FFFFFF;
+            top: -3px;
+            left: 100%;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .beijing{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background:url("https://y.gtimg.cn/music/photo_new/T002R300x300M000000zFECL2iqwch.jpg?max_age=2592000") no-repeat;
+            background-size: 100% 100%;
+            filter: blur(30px);
+
+        }
+        .beijing1{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(36, 163, 255, 0.3);
+            background-size: 100% 100%;
+
+            z-index: 1;
+        }
+       .container .border{
+            border: 1px solid rgba(225, 225, 225, .9);
+            color: #FFFFFF;
+            background-color: rgba(225, 225, 225, .5);
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="beijing"><div class="beijing1"></div></div>
+
+<audio></audio>
+<div class="container">
+
+<div class="content">
+   <div class="content-left">
+       <div class="title">
+           <ul>
+               <li><i></i>收藏</li>
+               <li><i></i>添加到</li>
+               <li><i></i>下载</li>
+               <li><i></i>删除</li>
+               <li><i></i>清空列表</li>
+           </ul>
+       </div>
+       <div class="clear"></div>
+       <div class="music">
+           <div class="music-top">
+               <p class="music-name">歌名</p>
+               <p class="music-singer">歌手</p>
+               <p class="music-time">时长</p>
+           </div>
+           <div class="clear"></div>
+           <div class="music-cententer">
+               <!--<ul>-->
+                   <!--<li class="music-name">歌名</li>-->
+                   <!--<li class="music-singer">歌手</li>-->
+                   <!--<li class="music-time">时长</li>-->
+               <!--</ul>-->
+
+           </div>
+
+
+       </div>
+   </div>
+    <div class="content-right">
+        <div class="cr-top">
+            <!--<img src="https://y.gtimg.cn/music/photo_new/T002R300x300M000000zFECL2iqwch.jpg?max_age=2592000" alt="">-->
+            <!--<p><a href="">歌曲名：空空如也</a></p>-->
+            <!--<p><a href="">歌手名：空空</a></p>-->
+            <!--<p><a href="">专辑名：空空如也</a></p>-->
+
+
+        </div>
+        <div class="c">歌词</div>
+        <!--<div class="cr-bottom">-->
+
+        <!--</div>-->
+
+    </div>
+    <div class="clear"></div>
+    <div class="music-bottom">
+        <div class="ms-left">
+            <a href="#" class="prev"></a>
+            <a href="#" class="star"></a>
+            <a href="#" class="next"></a>
+        </div>
+
+        <div class="ms-centene">
+            <div class="ms-name">22</div>
+            <div class="ms-time">
+                <span>00:00</span> / <span>00:00</span>
+            </div>
+            <div class="clear"></div>
+            <div class="w-progress">
+                <div class="n-progress"></div>
+                <div class="btn"></div>
+            </div>
+
+        </div>
+        <div class="grounp">
+            <i class="loop"></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <div class="volum">
+                <i class="mute"></i>
+              <div class="vw-progress">
+                    <div class="vn-progress"><div class="vn-big"></div></div>
+                    <div class="vm-btn">
+                </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+    data=[
+        {url:'http://dl.stream.qqmusic.qq.com/C400000TOO4v0AF3Bs.m4a?vkey=B025CB1B165DA970C260C5DE195F57CA68F26B5889AC02D3ED90CD15C202CCFC1DADA80A7AFDBF7DF352DEC3ECB224C688D2DC82D7EB2D1F&guid=1958271341&uin=1106469821&fromtag=66',
+        pic:'https://y.gtimg.cn/music/photo_new/T002R300x300M000000zFECL2iqwch.jpg?max_age=2592000',
+        sing:'夜曲',
+        singer:'杰伦'
+        },
+     {url:'http://dl.stream.qqmusic.qq.com/C400000Wk6NP4NaAPo.m4a?vkey=0D42C34BD3587EB29E66BF9A6829493AB13D84B59A830B859A80ECB6C5E455C061C0837E42213B80C73E46A3D776DD950127A3A770187176&guid=1958271341&uin=1106469821&fromtag=66',
+         pic:'https://y.gtimg.cn/music/photo_new/T002R300x300M000000zFECL2iqwch.jpg?max_age=2592000',
+         sing:'夜曲',
+         singer:'杰伦'
+     },
+    ];
+    var audio=document.querySelector('audio');
+    var index=0;
+    var str='';
+    for(var i=0;i<data.length;i++){
+        audio.src=data[i].url;
+        str+='<ul>';
+        str+='<li class="music-name">'+data[i].sing+'</li>';
+        str+='<li class="music-singer">'+data[i].singer+'</li>';
+        str+='<li class="music-time">04:00</li>';
+        str+='</ul>'
+        // str+='<li class="music-time">'+audio.duration+'</li>'
+    };
+    $('.music-cententer').html(str);
+    $('.music-cententer').children('ul').hover(function () {
+        var index=$(this).index();
+        $('.music-cententer').children('ul').eq(index).addClass('border').siblings().removeClass('border');
+        $('.music-cententer').children('ul').on('click',function () {
+            audio.src=data[index].url;
+            console.log(index);
+            playFn();
+        });
+    },function () {
+        var index=$(this).index();
+        $('.music-cententer').children('ul').eq(index).removeClass('border')
+    });
+    // 循环事件
+    // var flag1=true;
+    $('.loop').on('click',function () {
+        $('.loop').css({backgroundPositionY:-203});
+      audio.onended=function () {
+          index++;
+          index=index<0?data.length-1:index;
+          index=index>data.length-1?0:index;
+          audio.data[index].url;
+         audio.play();
+
+      }
+    });
+
+    $('.star').on('click',function () {
+      playFn();
+    });
+    function playFn() {
+        if(audio.paused){
+            audio.play();
+            $('.star').css({backgroundPositionX:-28});
+        }else {
+            audio.pause();
+            $('.star').css({backgroundPositionX:2})
+        }
+    }
+    $('.prev').on('click',function () {
+        index--;
+        index=index<0?data.length-1:index;
+        audio.src=data[index].url;
+        playFn()
+
+    });
+    $('.next').on('click',function () {
+        index++;
+        index=index>data.length-1?0:index;
+        audio.src=data[index].url;
+        console.log(index);
+      playFn()
+    });
+    var c=$('.music-bottom').find('.ms-centene');
+    audio.addEventListener('canplay',function () {
+        audio.addEventListener('timeupdate',function () {
+            $('.ms-time').children('span').eq(0).html(totime(audio.currentTime));
+            $('.ms-time').children('span').eq(1).html(totime(audio.duration));
+            // audio.currentTime/audio.duration*$('.ms-centene').width()
+            $('.n-progress').css({width:audio.currentTime/audio.duration*$('.ms-centene').width()});
+            $('.btn').css({left:audio.currentTime/audio.duration*$('.ms-centene').width()})
+        });
+    });
+
+    c.on('click',function (e) {
+        $('.n-progress').css({width:e.offsetX});
+        $('.ms-time').children('span').eq(0).html(totime(e.offsetX/$('.ms-centene').width()*audio.duration));
+        audio.currentTime=e.offsetX/$('.ms-centene').width()*audio.duration;
+    });
+    $('.vn-big').on('click',function (e) {
+        $('.vn-progress').css({width:e.offsetX});
+        $('.vm-btn').css({left:e.offsetX});
+        audio.volume=e.offsetX*0.01;
+    });
+    var flag=true;
+    $('.mute').on('click',function () {
+      if(flag){
+          audio.muted=true;
+          flag=false;
+          $('.mute').css({backgroundPositionY:-181})
+      }else {
+          $('.mute').css({backgroundPositionY:-143});
+          audio.muted=false;
+          flag=true;
+      }
+    });
+
+
+
+    function totime(num) {
+        var a=parseInt(num/60);
+        var b=parseInt(num%60);
+        a=a>9?a:'0'+a;
+        b=b>9?b:'0'+b;
+        return a+'：'+b;
+    }
+
+
+
+
+
+
+
+</script>
+</html>
